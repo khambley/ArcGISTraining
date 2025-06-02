@@ -26,5 +26,14 @@ namespace DisplayMap
                 _map = value; OnPropertyChanged();
             }
         }
+        public MapViewModel()
+        {
+            SetupMap();
+        }
+        private void SetupMap()
+        {
+            // Create a new map with a 'topographic vector' basemap
+            Map = new Map(BasemapStyle.ArcGISTopographic);
+        }
     }
 }
